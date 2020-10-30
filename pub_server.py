@@ -7,11 +7,10 @@ from divon import VideoCapture
 import cv2 as cv
 import traceback
 
-port = "5556"
 pub = Publisher()
 
 with_threading = False
-capture = VideoCapture(1280, 720, with_threading)
+capture = VideoCapture(640, 480, 90, with_threading)
 
 context = zmq.Context()
 socket = context.socket(zmq.PUB)
@@ -30,8 +29,8 @@ try:
             print("FPS: ", counter / (time.time() - start_time))
             counter = 0
             start_time = time.time()
-        # cv.imshow('Frame', frame)
-        # cv.waitKey(1) & 0xFF
+        cv.imshow('Frame', frame)
+        cv.waitKey(1) & 0xFF
         # break
 
 except (KeyboardInterrupt, SystemExit):

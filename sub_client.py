@@ -3,8 +3,7 @@ import zmq
 import cv2 as cv
 import traceback
 from divon import Publisher
-
-port = "5556"
+import time
 
 pub = Publisher()
 
@@ -15,8 +14,16 @@ socket.setsockopt(zmq.SUBSCRIBE, b"")
 socket.connect("tcp://localhost:5667")
 
 try:
+    start_time = time.time()
+    x = 1
+    counter = 0
     while True:
         frame = pub.recv_array(socket)
+        counter+=1
+        if (time.time() - start_time) > x :
+            print("FPS: ", counter / (time.time() - start_time))
+            counter = 0
+            start_time = time.time()
         cv.imshow('Frame', frame)
         cv.waitKey(1) & 0xFF
 except (KeyboardInterrupt, SystemExit):

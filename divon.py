@@ -50,13 +50,14 @@ class VideoCaptureThreading:
 
 class VideoCapture():
 
-    def __init__(self, width=1280, height=720, with_threading=False):
+    def __init__(self, width=1280, height=720, frame=30, with_threading=False):
         if with_threading:
             cap = VideoCaptureThreading(0)
         else:
             cap = cv2.VideoCapture(0)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
+        cap.set(cv2.CAP_PROP_FPS, frame)
         if with_threading:
             cap.start()
         self.with_threading = with_threading
