@@ -27,4 +27,5 @@ python -m pip install --upgrade pip
 pip install cysignals
 pip install cython
 pip install pupil-detectors
+pip install pyzmq
 ```
