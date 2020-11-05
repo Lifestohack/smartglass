@@ -19,6 +19,7 @@ sudo apt install -y libceres-dev
 ```
 
 
+
 ```sh
 # Upgrade pip to latest version. This is necessary for some dependencies.
 
@@ -29,3 +30,13 @@ pip install cython
 pip install pupil-detectors
 pip install pyzmq
 ```
+NOTE: When using a Python virtual environment, it should be created without the --system-site-packages flag; otherwise building might fail.
+
+### OpenCV Troubleshooting
+`ImportError: No module named 'cv2'`
+  
+When you see this error, Python cannot find the bindings from your OpenCV installation.
+
+**Do NOT (!) install `opencv-python` via pip in that case!** 
+
+Solution: [step 4 of this stackoverflow post](https://stackoverflow.com/a/37190408) for reference.
