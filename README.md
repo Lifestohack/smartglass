@@ -30,11 +30,11 @@ pip install cython
 pip install pupil-detectors
 pip install pyzmq
 ```
-NOTE: When using a Python virtual environment, it should be created without the --system-site-packages flag; otherwise building might fail.
-
 ### OpenCV Troubleshooting
 `ImportError: No module named 'cv2'`
-  
+
+NOTE: When using a Python virtual environment, you may face this problem.
+
 When you see this error, Python cannot find the bindings from your OpenCV installation.
 
 **Do NOT (!) install `opencv-python` via pip in that case!** 
