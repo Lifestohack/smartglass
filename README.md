@@ -7,9 +7,6 @@ Some dependencies should be installed before using it.
 ```sh
 sudo apt install -y pkg-config git cmake build-essential nasm wget python3-setuptools libusb-1.0-0-dev  python3-dev python3-pip python3-numpy python3-scipy libglew-dev libtbb-dev
 
-# ffmpeg >= 3.2
-sudo apt install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libavresample-dev ffmpeg x264 x265 libportaudio2 portaudio19-dev
-
 # OpenCV >= 3
 sudo apt install -y python3-opencv libopencv-dev
 
@@ -29,6 +26,7 @@ pip install cysignals
 pip install cython
 pip install pupil-detectors
 pip install pyzmq
+pip install picamera
 ```
 ### OpenCV Troubleshooting
 `ImportError: No module named 'cv2'`
